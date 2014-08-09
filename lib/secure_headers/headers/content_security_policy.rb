@@ -168,9 +168,7 @@ module SecureHeaders
           return
         end
 
-        if forward_endpoint
-          @report_uri = FF_CSP_ENDPOINT
-        end
+        @report_uri = FF_CSP_ENDPOINT
       end
     end
 

@@ -7,7 +7,7 @@ class ContentSecurityPolicyController < ActionController::Base
   def scribe
     csp = ::SecureHeaders::Configuration.csp || {}
 
-    forward_endpoint = csp[:forward_endpoint]
+    forward_endpoint = csp[:forward_endpoint] || csp[:report_uri]
     if forward_endpoint
       forward_params_to(forward_endpoint)
     end
